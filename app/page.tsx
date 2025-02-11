@@ -18,10 +18,10 @@ export default function Home() {
           Website under construction !
         </a>
         <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <Link href="https://github.com/xamcost">
+          <Link href="https://github.com/xamcost" target="_blank">
             <FaGithub size={40} />
           </Link>
-          <Link href="https://www.linkedin.com/in/mcostalonga/">
+          <Link href="https://www.linkedin.com/in/mcostalonga/" target="_blank">
             <FaLinkedin size={40} />
           </Link>
         </div>
