@@ -1,0 +1,70 @@
+---
+import portrait from '../images/portrait.png';
+---
+
+<div id="home-container">
+  <main id="home-hero">
+    <section id="home-portrait">
+      <img src={portrait.src} alt="Portrait of Xamcost" />
+    </section>
+    <section id="home-intro">
+      <h1>Hi, I'm Maxime Costalonga</h1>
+      <p>
+        I'm a software developer and a tech enthusiast. I love to learn new technologies and 
+        build cool (and ideally useful) stuff.
+        My interests include full-stack web development, devops, tinkering with Raspberry Pis,
+        and learning about AI and machine learning.
+        Aside from coding, I enjoy many arts (literature, music, cinema, etc.), sailing and 3D printing.<br /><br />
+        In this website, you'll find some of my projects, blog posts on random topics, and my resume. 
+        Thanks for stopping by!
+      </p>
+    </section>
+  </main>
+</div>
+
+<style>
+  #home-container {
+    height: 100%;
+    margin: 5em 20em 0 20em;
+  }
+
+  #home-hero {
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    align-items: start;
+    height: 100%;
+  }
+
+  #home-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 4em;
+    padding-left: 4em;
+    gap: 2em;
+  }
+
+  #home-portrait {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin-top: 0.5em;
+    color: #7aa2f7;
+  }
+
+  p {
+    color: #f7f7f7;
+  }
+</style>
