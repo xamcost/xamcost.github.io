@@ -8,7 +8,16 @@
 		<title>Xamcost</title>
 	</head>
 	<body>
-		<slot />
+     <div id="navbar">
+       <ul id="navbar-items">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/resume">Resume</a></li>
+      </ul> 
+      <hr />
+    </div>
+    <slot />
 	</body>
 </html>
 
@@ -16,7 +25,37 @@
 	html,
 	body {
 		margin: 0;
+    padding: 0;
 		width: 100%;
 		height: 100%;
+    background-color: #24283b;
 	}
+
+  #navbar {
+    padding: 5px 0;
+  }
+
+  #navbar-items {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.5em;
+    font-family: 'Mononoki', monospace;
+    font-weight: 600;
+  }
+  
+  #navbar-items a {
+    text-decoration: none;
+    color:  #7aa2f7;
+  }
+
+  #navbar-items a:hover {
+    color: #f7f7f7;
+  }
+
+  #navbar hr {
+    border: 1px solid #7aa2f7;
+  }
 </style>
