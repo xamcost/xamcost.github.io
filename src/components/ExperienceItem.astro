@@ -1,0 +1,64 @@
+---
+const { role, company, location, start, end, tasks } = Astro.props;
+---
+
+<div id="exp-container">
+  <div id="exp-company-row">
+    <h2 id="exp-company">
+      {company}
+    </h2>
+    <h2 id="exp-location">
+      {location}
+    </h2>
+  </div>
+  <div id="exp-role-row">
+    <h3 id="role">
+      {role}
+    </h3>
+    <h3 id="exp-dates">
+      {start} - {end}
+    </h3>
+  </div>
+  <ul id="exp-task-list">
+    {tasks.map((task: string) => <li>{task}</li>)}
+  </ul>
+</div>
+
+<style>
+  #exp-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #exp-company-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -1.5em;
+  }
+
+  #exp-company-row h2 {
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+    color: #bb9af7;
+  }
+
+  #exp-role-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #exp-role-row h3 {
+    font-size: 1.5em;
+    color: #b4f9f8;
+  }
+  
+  #exp-task-list {
+    list-style-type: disc;
+  }
+
+  #exp-task-list li {
+    font-size: 1.2em;
+    color: #f7f7f7;
+    margin-bottom: 0.5em;
+}
+</style>

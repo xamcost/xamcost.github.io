@@ -1,0 +1,241 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const experiences = [
+  {
+    "company": "Eviden / Atos",
+    "location": "London, UK",
+    "role": "R&D Technical Lead",
+    "start": "April 2022",
+    "end": "present",
+    "tasks": [
+      "Contributing to the development of Data Spaces: decentralized data sharing ecosystems.",
+      "Maintaining a microservices data platform supported by a Kubernetes cluster to collect, harmonize and analyze electric-vehicle charging data in 7 cities across Europe.",
+      "Designing and implementing customized web dashboards using Nextjs React framework (frontend) and Python FastAPI (backend) to enable non-technical users to visualize projects data.",
+      "Coordinating European Union projects to accelerate digital transformation in Energy, Climate and Decarbonization."
+    ]
+  },
+  {
+    "company": "Enthought",
+    "location": "Cambridge, UK",
+    "role": "Scientific Software Engineer",
+    "start": "April 2020",
+    "end": "March 2022",
+    "tasks": [
+      "Designing and implementing a software development kit to assist private R&D in their data and workflow management, and design of experiments.",
+      "Developed custom scientific softwares that specialized in fast data ingestion and analysis, using Python, Qt and PostgreSQL.",
+      "Deployed machine learning algorithms to recommend researchers with new measurements (optimized to reduce the cost of experiments).",
+      "Lead the UI/UX design, collecting, prioritizing and implementing feedback from users and other developers."
+    ]
+  },
+  {
+    "company": "Massachusetts Institute of Technology",
+    "location": "Boston, USA",
+    "role": "Postdoctoral Associate",
+    "start": "April 2018",
+    "end": "March 2020",
+    "tasks": [
+      "Conducted cutting-edge experimental research in fluid mechanics, with applications in agricultural sprays, wax mitigation in oil pipes and vaccine manufacturing.",
+      "Implemented experiments and image processing automation using Python, scikit-image and OpenCV.",
+      "Wrote research proposals and obtained grants ranging from $50K and $300K."
+    ]
+  },
+  {
+    "company": "University of Twente",
+    "location": "Enschede, NL",
+    "role": "Postdoctoral Associate",
+    "start": "February 2016",
+    "end": "March 2018",
+    "tasks": [
+      "Performed experimental research in fluid mechanics and solid elasticity, with applications in ink-jet printing and medical imaging.",
+      "Implemented a Python module to reconstruct 3D images from a digital holographic microscope.",
+      "Developed an open-source Python package enabling user friendly curve fitting in matplotlib (Anafit)."
+    ]
+  },
+]
+
+const education = [
+  {
+    company: "University Paris Diderot",
+    location: "Paris, FR",
+    role: "Ph.D. in Fluid Mechanics",
+    start: "September 2012",
+    end: "December 2015",
+    tasks: [
+      "Conducted research on vibrated fluids for non-invasive handling of liquids, with applications in medical testing, hazardous chemical management, and industrial cooling.",
+      "Published peer-reviewed articles in high-impact journals such as Physical Review Fluids.",
+      "Collaborated with Valeo, a car parts manufacturer, to develop a new type of heat exchanger for cars."
+    ]
+  },
+  {
+    company: "GDF Suez (now Engie)",
+    location: "Paris, FR",
+    role: "Research Intern",
+    start: "March 2011",
+    end: "September 2011",
+    tasks: [
+      "Developed a software in C++ to predict household energy consumption while minimizing inputs from residents.",
+      "Shortened the questionnaire from 20 questions to only 5 while maintaining the same prediction accuracy."
+    ]
+  },
+  {
+    company: "University Paris Diderot",
+    location: "Paris, FR",
+    role: "M.Sc. in Physics",
+    start: "September 2010",
+    end: "June 2012",
+    tasks: [
+      "Dual master's in Fundamental Physics and Renewable Energies (Mechanical Engineering)."
+    ]
+  }
+];
+
+const skills = {
+  "💻 Programming": [
+    { skill: "Python", icon: "fa-brands fa-python", details: "Advanced, scientific stack (numpy, pandas, scikit-image, scikit-learn), FastAPI" },
+    { skill: "Web Development", icon: "fa-solid fa-globe", details: "HTML, CSS, JavaScript, React, Next.js, Astro" },
+    { skill: "Git", icon: "fa-brands fa-git-alt" },
+    { skill: "Bash", icon: "fa-brands fa-linux" }
+  ],
+  "🛠️ DevOps": [
+    { skill: "Continuous Integration", icon: "fa-solid fa-code-branch", details: "GitHub Actions, GitLab CI/CD" },
+    { skill: "Docker", icon: "fa-brands fa-docker" },
+    { skill: "Kubernetes", icon: "fa-solid fa-cloud" },
+    { skill: "Microservices Architecture", icon: "fa-solid fa-cubes" },
+    { skill: "Ansible", icon: "fa-solid fa-robot" }
+  ],
+  "📊 Data Management": [
+    { skill: "ElasticSearch", icon: "fa-solid fa-database" },
+    { skill: "PostgreSQL", icon: "fa-solid fa-database" },
+    { skill: "MongoDB", icon: "fa-brands fa-envira" },
+    { skill: "MQTT", icon: "fa-solid fa-network-wired" },
+    { skill: "Apache Nifi", icon: "fa-solid fa-server" },
+    { skill: "Airflow", icon: "fa-solid fa-wind" }
+  ],
+  "🔌 Microelectronics": [
+    { skill: "Raspberry Pi", icon: "fa-brands fa-raspberry-pi" },
+    { skill: "Arduino", icon: "fa-brands fa-usb" },
+    { skill: "MicroPython", icon: "fa-solid fa-code" },
+    { skill: "CircuitPython", icon: "fa-solid fa-microchip" }
+  ],
+  "📝 Soft Skills": [
+    { skill: "Agile Development", icon: "fa-solid fa-people-arrows" },
+    { skill: "Multi-tasking", icon: "fa-solid fa-tasks", details: "Managed up to 6 research projects simultaneously" },
+    { skill: "Organisation", icon: "fa-solid fa-calendar-alt", details: "Weekly sprint planning, Agile roadmaps" },
+    { skill: "Writing", icon: "fa-solid fa-pen", details: "Software design docs and specifications, 10+ peer-reviewed scientific papers" },
+    { skill: "Team Management", icon: "fa-solid fa-users", details: "Managed research teams of 10+ people, composed of PhD candidates, research interns, and software engineers" }
+  ],
+  "🔬 Research": [
+    { skill: "Instrumentation", icon: "fa-solid fa-video", details: "Design and implementation of experimental setups involving high-speed imaging, digital holographic microscopy, mechanical testing and particle image velocimetry" },
+    { skill: "Experimental Fluid Mechanics", icon: "fa-solid fa-video", details: "Complex fluids rheology, microfluidics, ..." },
+  ],
+  "📦 Miscellaneous": [
+    { skill: "Image Processing", icon: "fa-solid fa-image", details: "OpenCV, ImageJ" },
+    { skill: "CAD", icon: "fa-solid fa-cube", details: "Onshape, SolidWorks" }
+  ],
+  "🌍 Languages": [
+    { skill: "🇫🇷 French (Native)"},
+    { skill: "🇬🇧 English (Fluent)"},
+    { skill: "🇪🇸 Spanish (Beginner)"}
+  ]
+};
+
+---
+
+<main id="resume-container">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <h1 id="experiences-header">
+    Experiences
+  </h1>
+  <hr />
+  {experiences.map((exp) => <ExperienceItem role={exp.role} company={exp.company} start={exp.start} end={exp.end} location={exp.location} tasks={exp.tasks} />)}
+  <h1 id="education-header">
+    Education
+  </h1>
+  <hr />
+  {education.map((exp) => <ExperienceItem role={exp.role} company={exp.company} start={exp.start} end={exp.end} location={exp.location} tasks={exp.tasks} />)}
+  <h1 id="skill-header">
+    Skills
+  </h1>
+  <div id="skills-container">
+    {Object.entries(skills).map(([category, skills]) => (
+      <div id="skills-category">
+        <h2>{category}</h2>
+        <ul id="skills-list">
+          {skills.map((skill) => (
+            <li>
+              <div id="skills-label">
+                {skill?.icon && <i class={`fa ${skill.icon}`}></i>}
+                <span>{skill.skill}</span>
+              </div>
+              {skill?.details && <p>{skill.details}</p>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <hr />
+</main>
+
+<style>
+  #resume-container {
+    height: 100%;
+    margin: 5em 20em 0 20em;
+  }
+  #resume-container h1 {
+    color: #7aa2f7;
+    margin-bottom: 0em;
+  }
+
+  #resume-container hr {
+    border: 1px solid #7aa2f7;
+  }
+
+  #skills-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #skills-category {
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #7aa2f7;
+    border-radius: 5px;
+    width: 40%;
+  }
+
+  #skills-category h2 {
+    color: #bb9af7;
+  }
+
+  #skills-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  #skills-list li {
+    color: #f7f7f7;
+  }
+
+  #skills-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #skills-label i {
+    width: 2em;
+    color: #b4f9f8;
+  }
+
+  #skills-label span {
+    color: #b4f9f8;
+  }
+
+  #skills-list p {
+    font-style: italic;
+    margin-top: 0em;
+  }
+
+</style>
