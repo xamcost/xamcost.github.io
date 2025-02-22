@@ -17,7 +17,9 @@
       </ul> 
       <hr />
     </nav>
-    <slot />
+    <div id="slot-container">
+      <slot />
+    </div>
 	</body>
 </html>
 
@@ -57,5 +59,15 @@
 
   #navbar hr {
     border: 1px solid #7aa2f7;
+  }
+
+  #slot-container {
+    margin: 5em 20vw 0 20vw;
+  }
+
+  @media (max-width: 1000px) {
+    #slot-container {
+      margin: 5em 5vw 0 5vw;
+    }
   }
 </style>
