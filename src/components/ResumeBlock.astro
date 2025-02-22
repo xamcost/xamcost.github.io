@@ -157,6 +157,7 @@ const skills = {
   <h1 id="skill-header">
     Skills
   </h1>
+  <hr />
   <div id="skills-container">
     {Object.entries(skills).map(([category, skills]) => (
       <div id="skills-category">
@@ -175,14 +176,20 @@ const skills = {
       </div>
     ))}
   </div>
-  <hr />
 </main>
 
 <style>
   #resume-container {
     height: 100%;
-    margin: 5em 20em 0 20em;
+    margin: 5em 20vw 0 20vw;
   }
+
+  @media (max-width: 1000px) {
+    #resume-container {
+      margin: 5em 5vw 0 5vw;
+    }
+  }
+
   #resume-container h1 {
     color: #7aa2f7;
     margin-bottom: 0em;
@@ -193,8 +200,15 @@ const skills = {
   }
 
   #skills-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+
+  @media (max-width: 800px) {
+    #skills-container {
+      grid-template-columns: 1fr;
+    }
   }
 
   #skills-category {
@@ -202,7 +216,6 @@ const skills = {
     padding: 1em;
     border: 1px solid #7aa2f7;
     border-radius: 5px;
-    width: 40%;
   }
 
   #skills-category h2 {

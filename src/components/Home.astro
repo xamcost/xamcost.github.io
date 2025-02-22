@@ -51,15 +51,14 @@ Aside from coding, I enjoy many arts (literature, music, cinema, etc.), sailing 
 
 <style>
   #home-container {
-    height: 100%;
-    margin: 5em 20em 0 20em;
+    margin: 5em 20vw 0 20vw;
   }
 
   #home-hero {
     display: flex;
     justify-content: center;
     text-align: justify;
-    align-items: start;
+    align-items: center;
     height: 100%;
   }
 
@@ -67,8 +66,7 @@ Aside from coding, I enjoy many arts (literature, music, cinema, etc.), sailing 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 4em;
-    padding-left: 4em;
+    padding-left: 4vw;
     gap: 2em;
   }
 
@@ -80,9 +78,29 @@ Aside from coding, I enjoy many arts (literature, music, cinema, etc.), sailing 
     gap: 2em;
   }
 
+  @media (max-width: 1000px) {
+    #home-container {
+      margin: 5em 5vw 0 5vw;
+    }
+
+    #home-hero {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #home-intro {
+      padding-left: 0vw;
+      gap: 0em;
+    }
+
+    #home-portrait {
+      width: 50%;
+    }
+  }
+
   #portrait {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
   }
