@@ -1,0 +1,73 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+---
+
+<Layout>
+  <div id="projects-container">
+    <div id="projects-list">
+      {projects.map(project => (
+        <>
+          {!project.data.isDraft && <a id="project" href={`/projects/${project.id}`}>
+            <h2>{project.data.title}</h2>
+            <img src={`${project.data.image.src}`} alt={project.data.image.alt} />
+            <p>{project.data.description}</p>
+          </a>}
+        </>
+      ))}
+    </div>
+</Layout>
+
+<style>
+  #projects-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  }
+
+  #projects-container h1 {
+    color: #7aa2f7;
+  }
+
+  #projects-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+  }
+
+  #project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #7aa2f7;
+    border-radius: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  #project:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+    background-color: #394b70;
+  }
+
+  #project h2 {
+    color: #bb9af7;
+  }
+
+  #project img {
+    width: 60%;
+    height: 60%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+  }
+
+  #project p {
+    text-align: center;
+    color: #f7f7f7;
+  }
+</style>
