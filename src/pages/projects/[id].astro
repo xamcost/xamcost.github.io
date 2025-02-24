@@ -25,7 +25,7 @@ const { Content } = await render(project);
     text-align: center;
     margin-top: -2em;
   }
-
+  
   h2 {
     color: #bb9af7;
   }
@@ -41,6 +41,12 @@ const { Content } = await render(project);
 
   ul {
     color: #f7f7f7;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
   pre {
@@ -89,5 +95,14 @@ const { Content } = await render(project);
         display: none;
       }
     }
+  }
+
+  .line.highlighted {
+    background-color: #24262c;
+    transition: background-color .5s;
+    margin: 0 -24px;
+    padding: 0 24px;
+    width: calc(100% - 20px);
+    display: inline-block;
   }
 </style>
