@@ -1,13 +1,14 @@
-// @ts-check
 import { defineConfig } from 'astro/config'
+import { h } from 'hastscript'
+import { transformerNotationHighlight } from '@shikijs/transformers'
 
-const addCopyButton = () => {
+const transformerCopyButton = () => {
   return {
     name: 'shiki-transformer-copy-button',
-    pre(node) {
+    pre (node) {
       const button = h('button', {
         class: 'copy',
-        "data-code": this.source,
+        'data-code': this.source,
         onclick: `
           navigator.clipboard.writeText(this.dataset.code);
           this.classList.add('copied');
@@ -27,9 +28,10 @@ export default defineConfig({
   site: 'https://astronaut.github.io',
   markdown: {
     shikiConfig: {
-      theme: 'tokyo-night',
+      theme: 'catppuccin-frappe',
       transformers: [
-        addCopyButton()
+        transformerNotationHighlight(),
+        transformerCopyButton()
       ]
     }
   }
