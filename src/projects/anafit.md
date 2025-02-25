@@ -55,7 +55,13 @@ plt.show()
 
 This creates a button in the toolbar of the plot, from which you can access the Anafit interface.
 
-![anafit menu](../images/anafit_menu.jpg "The Anafit menu in the right side of the toolbar")
+![anafit fit gif](../images/anafit_fit.gif)
+
+Anafit also enables you to draw lines on the plot and get their corresponding slopes, or draw lines of a given slope. This is very convenient in log-log plots, to show the power-law behavior of the data.
+
+![anafit loglog slopes](../images/anafit_log.gif)
+
+Anafit can do many more things, such as defining custom fit functions. You can use the `anafit.Figure` instance you created to add the anafit menu to your plot to access all properties of your fits, including their parameters but also the `line` objects to modify the style of the curves (check the `ana.fits` list).
 
 Some example scripts are provided in the [`examples` directory of the repository](https://github.com/xamcost/anafit/tree/master/examples).
 
