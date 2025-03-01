@@ -2,6 +2,7 @@
 isDraft: false
 title: "Anafit"
 description: "A visual curve fitting tool for Matplotlib"
+status: "ongoing"
 image:
   src: "https://raw.githubusercontent.com/xamcost/anafit/refs/heads/master/anafit/ui/ana_icon.svg"
   alt: "Anafit logo"

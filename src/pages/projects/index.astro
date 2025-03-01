@@ -3,12 +3,18 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects');
+const ongoingProjects = projects.filter(project => project.data.status === 'ongoing');
+const pastProjects = projects.filter(project => project.data.status === 'done');
 ---
 
 <Layout>
-  <div id="projects-container">
-    <div id="projects-list">
-      {projects.map(project => (
+  <h1 id="ongoing-header">
+    Ongoing
+  </h1>
+  <hr />
+  <div id="ongoing-projects-container">
+    <div id="ongoing-projects-list">
+      {ongoingProjects.map(project => (
         <>
           {!project.data.isDraft && <a id="project" href={`/projects/${project.id}`}>
             <h2>{project.data.title}</h2>
@@ -18,10 +24,37 @@ const projects = await getCollection('projects');
         </>
       ))}
     </div>
+  </div>
+  <h1 id="past-header">
+    Past 
+  </h1>
+  <hr />
+  <div id="past-projects-container">
+    <div id="past-projects-list">
+      {pastProjects.map(project => (
+        <>
+          {!project.data.isDraft && <a id="project" href={`/projects/${project.id}`}>
+            <h2>{project.data.title}</h2>
+            <img src={`${project.data.image.src}`} alt={project.data.image.alt} />
+            <p>{project.data.description}</p>
+          </a>}
+        </>
+      ))}
+    </div>
+  </div>
 </Layout>
 
 <style>
-  #projects-container {
+  #ongoing-header, #past-header {
+    color: #7aa2f7;
+    margin-bottom: 0em;
+  }
+
+  hr {
+    border: 1px solid #7aa2f7;
+  }
+
+  div[id$='projects-container'] {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,11 +62,7 @@ const projects = await getCollection('projects');
     gap: 2em;
   }
 
-  #projects-container h1 {
-    color: #7aa2f7;
-  }
-
-  #projects-list {
+  div[id$='projects-list'] {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1em;

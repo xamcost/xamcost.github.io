@@ -2,6 +2,7 @@
 isDraft: false
 title: "Personal Website"
 description: "The website you are currently viewing!"
+status: "ongoing"
 image:
   src: "/grand_duc_circle.svg"
   alt: "Xamcost logo"

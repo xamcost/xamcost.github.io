@@ -8,6 +8,7 @@ const projects = defineCollection({
     isDraft: z.boolean(),
     title: z.string(),
     description: z.string(),
+    status: z.enum(['ongoing', 'done']),
     image: z.object({
       src: z.string(),
       alt: z.string(),
