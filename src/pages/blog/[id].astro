@@ -1,0 +1,153 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+import { calculateReadingTime } from '../../utils/readingTime';
+
+export async function getStaticPaths() {
+  const blogposts = await getCollection('blogposts');
+  return blogposts.map(post => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const readingTime = calculateReadingTime(post.body ?? '');
+---
+
+<Layout>
+  <h1 id="post-title">{post.data.title}</h1>
+  <p id="post-pub-read">{`Published on ${post.data.publishedOn.toLocaleDateString()} · ${readingTime} min read`}</p>
+  <Content />
+</Layout>
+
+<style is:global>
+  #post-title {
+    color: #7aa2f7;
+    text-align: center;
+    margin-top: -1em;
+    font-size: 2.5em;
+  }
+
+  #post-pub-read {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+    color: #a9b1d6;
+    font-size: 0.9em;
+  }
+
+  h2 {
+    color: #bb9af7;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  h3 {
+    color: #ffc777;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  h4 {
+    color: #c3e88d;
+  }
+
+  p {
+    color: #c0caf5;
+    text-align: justify;
+  }
+
+  a {
+    color: #7aa2f7;
+  }
+
+  ul {
+    color: #c0caf5;
+    li::marker {
+      color: #ffc777;
+    }
+  }
+
+  ol {
+    color: #c0caf5;
+    li::marker {
+      color: #ffc777;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  pre {
+    padding: 4px;
+    border-radius: 5px;
+  }
+
+  pre:has(code) {
+    position: relative;
+  }
+
+  pre button.copy {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    display: flex;
+    border: none;
+    background: none;
+
+    span {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .ready {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");
+    }
+
+    .success {
+      display: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");
+    }
+
+    &.copied {
+      & .success {
+        display: block;
+      }
+
+      & .ready {
+        display: none;
+      }
+    }
+  }
+
+  .line.highlighted {
+    background-color: #24262c;
+    transition: background-color .5s;
+    margin: 0 -24px;
+    padding: 0 24px;
+    width: calc(100% - 20px);
+    display: inline-block;
+  }
+
+  /* Images formatting: case by case */
+  #rpi-cluster-photo {
+    float: right;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  
+</style>

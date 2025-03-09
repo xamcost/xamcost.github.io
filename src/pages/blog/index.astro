@@ -1,0 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { calculateReadingTime } from '../../utils/readingTime';
+
+const blogposts = await getCollection('blogposts');
+const nonDraftPosts = blogposts.filter(post => !post.data.isDraft);
+
+// Calculate reading time for each post
+for (const post of nonDraftPosts) {
+  const { body } = post;
+  post.data.readingTime = calculateReadingTime(body ?? '');
+}
+---
+
+<Layout>
+  <div id="posts-container">
+    <div id="posts-list">
+      {nonDraftPosts.map((post, index) => (
+        <>
+	  <a id="post" class={index % 2 === 0 ? "image-right" : "image-left"} href={`/blog/${post.id}`}>
+	    <div id="post-content">
+	      <h2>{post.data.title}</h2>
+	      <p id="post-abstract">{post.data.abstract}</p>
+	      <div id="post-footer">
+	        <p id="post-publication">{`Published on ${post.data.publishedOn.toLocaleDateString()}`}</p>
+	        <p id="post-reading">{`Reading time: ${post.data.readingTime} min`}</p>
+	      </div>
+	    </div>
+	    <img src={`${post.data.image.src}`} alt={post.data.image.alt} />
+	  </a>
+	  {(index < nonDraftPosts.length - 1) && <hr class="post-separator" />}
+	</>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  hr {
+    border: 1px solid #7aa2f7;
+    width: 90%;
+  }
+
+  div[id$='posts-container'] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  }
+
+  div[id$='posts-list'] {
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+  }
+
+  #post {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    border-radius: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  #post.image-right {
+    flex-direction: row;
+  }
+
+  #post.image-left {
+    flex-direction: row-reverse;
+  }
+
+  #post:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+    background-color: #394b70;
+  }
+
+  #post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #post-footer {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    font-size: 0.9em;
+  }
+  
+  #post h2 {
+    color: #bb9af7;
+  }
+
+  #post img {
+    width: 40%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  #post p {
+    text-align: justify;
+    color: #c0caf5;
+  }
+</style>
