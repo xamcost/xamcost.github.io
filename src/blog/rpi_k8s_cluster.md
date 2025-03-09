@@ -3,7 +3,7 @@ isDraft: false
 title: "Setting Up a Raspberry Pi Kubernetes Cluster as a Home Server"
 abstract: "A guide on how to set up a Raspberry Pi Kubernetes cluster as a home server, and why you might want to do it. It uses k3s, Longhorn for managing persistent volumes, and shows how to expose services locally and publicly."
 image:
-  src: "/public/rpi_cluster.jpeg"
+  src: "/rpi_cluster.jpeg"
   alt: "Raspberry Pi Kubernetes Cluster"
 tags: ["Raspberry Pi", "Home Server", "Kubernetes"]
 publishedOn: "2025-03-07"
@@ -33,7 +33,7 @@ With all that said, let's get started!
 
 ## Hardware
 
-<img src="/public/rpi_cluster.jpeg" alt="RPi cluster" id="rpi-cluster-photo" />
+<img src="/rpi_cluster.jpeg" alt="RPi cluster" id="rpi-cluster-photo" />
 
 In this project, I used the following hardware (mostly because that's what I had lying around):
 - 2 Raspberry Pi Compute Modules 4 (CM4) with 8GB of RAM and 32GB of eMMC storage, mounted on a [WaveShare Base Board A](https://www.waveshare.com/cm4-io-base-a.htm).
