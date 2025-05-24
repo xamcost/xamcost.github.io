@@ -1,20 +1,21 @@
 ---
 isDraft: false
-title: "Anafit"
-description: "A visual curve fitting tool for Matplotlib"
-status: "ongoing"
+title: 'Anafit'
+description: 'A visual curve fitting tool for Matplotlib'
+status: 'done'
 image:
-  src: "https://raw.githubusercontent.com/xamcost/anafit/refs/heads/master/anafit/ui/ana_icon.svg"
-  alt: "Anafit logo"
-link: "https://github.com/xamcost/anafit"
-tags: ["Python", "Matplotlib", "Curve fitting"]
+  src: 'https://raw.githubusercontent.com/xamcost/anafit/refs/heads/master/anafit/ui/ana_icon.svg'
+  alt: 'Anafit logo'
+link: 'https://github.com/xamcost/anafit'
+tags: ['Python', 'Matplotlib', 'Curve fitting']
 ---
 
-Anafit is a visual curve fitting tool for Matplotlib. It is largely inspired from the [Ezyfit toolbox](http://www.fast.u-psud.fr/ezyfit/) for Matlab. It allows you to fit a curve to your data by interactively adjusting the parameters of the model. It is designed to be easy to use and to provide immediate feedback on the quality of the fit. Anafit is built on top of `matplotlib` and uses the `scipy` library for curve fitting. It is open source and [available on GitHub](https://github.com/xamcost/anafit). 
+Anafit is a visual curve fitting tool for Matplotlib. It is largely inspired from the [Ezyfit toolbox](http://www.fast.u-psud.fr/ezyfit/) for Matlab. It allows you to fit a curve to your data by interactively adjusting the parameters of the model. It is designed to be easy to use and to provide immediate feedback on the quality of the fit. Anafit is built on top of `matplotlib` and uses the `scipy` library for curve fitting. It is open source and [available on GitHub](https://github.com/xamcost/anafit).
 
 ## Features
 
 Anafit provides the following features:
+
 - interactive curve fitting
 - when multiple datasets are present, you can choose which dataset to fit
 - you can define your custom fit functions
@@ -39,10 +40,10 @@ pip install anafit
 
 Anafit is very simple to use. Simply pass the matplotlib `Figure` instance to the anafit `Figure` class, and you are ready to go:
 
-```python 
-import matplotlib.pyplot as plt 
+```python
+import matplotlib.pyplot as plt
 import numpy as np
-import anafit 
+import anafit
 
 fig, ax = plt.subplots()
 ax.plot(
@@ -69,6 +70,6 @@ Some example scripts are provided in the [`examples` directory of the repository
 ## Known limitations
 
 Anafit has some limitations worth keeping in mind:
+
 - it only works with the `Qt5Agg` backend of matplotlib.
 - only figures with a single subplot are supported. It can contain multiple datasets, but they must be plotted on the same subplot.
-
