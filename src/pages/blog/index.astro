@@ -18,19 +18,19 @@ for (const post of nonDraftPosts) {
     <div id="posts-list">
       {nonDraftPosts.map((post, index) => (
         <>
-	  <a id="post" class={index % 2 === 0 ? "image-right" : "image-left"} href={`/blog/${post.id}`}>
-	    <div id="post-content">
-	      <h2>{post.data.title}</h2>
-	      <p id="post-abstract">{post.data.abstract}</p>
-	      <div id="post-footer">
-	        <p id="post-publication">{`Published on ${post.data.publishedOn.toLocaleDateString()}`}</p>
-	        <p id="post-reading">{`Reading time: ${post.data.readingTime} min`}</p>
-	      </div>
-	    </div>
-	    <img src={`${post.data.image.src}`} alt={post.data.image.alt} />
-	  </a>
-	  {(index < nonDraftPosts.length - 1) && <hr class="post-separator" />}
-	</>
+          <a id="post" class={index % 2 === 0 ? "image-right" : "image-left"} href={`/blog/${post.id}`}>
+            <div id="post-content">
+              <h2>{post.data.title}</h2>
+              <p id="post-abstract">{post.data.abstract}</p>
+              <div id="post-footer">
+                <p id="post-publication">{`Published on ${post.data.publishedOn.toLocaleDateString()}`}</p>
+                <p id="post-reading">{`Reading time: ${post.data.readingTime} min`}</p>
+              </div>
+            </div>
+            <img src={`${post.data.image.src}`} alt={post.data.image.alt} />
+          </a>
+          {(index < nonDraftPosts.length - 1) && <hr class="post-separator" />}
+        </>
       ))}
     </div>
   </div>
@@ -63,6 +63,7 @@ for (const post of nonDraftPosts) {
     border-radius: 5px;
     padding-left: 1em;
     padding-right: 1em;
+    text-decoration: none;
   }
 
   #post.image-right {
@@ -91,7 +92,7 @@ for (const post of nonDraftPosts) {
     font-style: italic;
     font-size: 0.9em;
   }
-  
+
   #post h2 {
     color: #bb9af7;
   }
