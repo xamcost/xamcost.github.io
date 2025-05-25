@@ -7,7 +7,7 @@ image:
   src: 'https://cdn-icons-png.flaticon.com/512/14991/14991688.png'
   alt: 'Pomodoro flaticon'
 link: 'https://github.com/xamcost/pomodoro'
-tags: ['Rust', 'Ratatui', 'Productivity']
+tags: ['Rust', 'Terminal UI']
 ---
 
 As a beginner project to learn Rust, I built [a simple Pomodoro timer that runs in a terminal](https://github.com/xamcost/pomodoro). The Pomodoro technique is a time management method that uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short 5 minutes breaks. This technique is designed to improve focus and productivity by encouraging sustained concentration and regular breaks.

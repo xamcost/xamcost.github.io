@@ -8,6 +8,9 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
 ---
 
 <Layout>
+  <p id="projects-intro">
+    Here are some of the (public) projects I have worked on. You can find more details about each project by clicking on them.
+  </p>
   <h1 id="ongoing-header">
     Ongoing
   </h1>
@@ -20,13 +23,18 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
             <h2>{project.data.title}</h2>
             <img src={`${project.data.image.src}`} alt={project.data.image.alt} />
             <p>{project.data.description}</p>
+            <div id="project-tags">
+              {project.data.tags && project.data.tags.map(tag => (
+                <p>{tag}</p>
+              ))}
+            </div>
           </a>}
         </>
       ))}
     </div>
   </div>
   <h1 id="past-header">
-    Past 
+    Past
   </h1>
   <hr />
   <div id="past-projects-container">
@@ -37,6 +45,11 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
             <h2>{project.data.title}</h2>
             <img src={`${project.data.image.src}`} alt={project.data.image.alt} />
             <p>{project.data.description}</p>
+            <div id="project-tags">
+              {project.data.tags && project.data.tags.map(tag => (
+                <p>{tag}</p>
+              ))}
+            </div>
           </a>}
         </>
       ))}
@@ -45,6 +58,11 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
 </Layout>
 
 <style>
+  #projects-intro {
+    color: #c0caf5;
+    text-align: center;
+  }
+
   #ongoing-header, #past-header {
     color: #7aa2f7;
     margin-bottom: 0em;
@@ -76,6 +94,7 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
     border-radius: 5px;
     padding-left: 1em;
     padding-right: 1em;
+    text-decoration: none;
   }
 
   #project:hover {
@@ -93,10 +112,28 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
     height: 60%;
     aspect-ratio: 1 / 1;
     object-fit: contain;
+    margin-top: -1em;
   }
 
   #project p {
     text-align: center;
     color: #c0caf5;
+  }
+
+  #project-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: -1em;
+  }
+
+  #project-tags p {
+    color: #292e42;
+    background-color: #7dcfff;
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
   }
 </style>
