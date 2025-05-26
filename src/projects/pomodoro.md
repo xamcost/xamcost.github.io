@@ -2,7 +2,7 @@
 isDraft: false
 title: 'Pomodoro Timer'
 description: 'A Terminal UI Pomodoro timer, in Rust'
-status: 'done'
+status: 'ongoing'
 image:
   src: 'https://cdn-icons-png.flaticon.com/512/14991/14991688.png'
   alt: 'Pomodoro flaticon'
