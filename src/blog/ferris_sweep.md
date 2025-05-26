@@ -104,7 +104,7 @@ I built **two versions** of the Ferris Sweep Bling LP: a _wired_ home setup and 
 1. **Socketing Controllers**:
 
    - Use a **breadboard + tape** to align Mill-Max pins before soldering (see image below). A magnet helps collect stray pins!  
-     ![Mill-Max socketing method using a breadboard and tape](/mill_max_socketing.png)
+     ![Mill-Max socketing method using a breadboard and tape](/mill_max_socketing.jpeg)
 
 2. **Battery Safety**:
 
@@ -115,7 +115,7 @@ I built **two versions** of the Ferris Sweep Bling LP: a _wired_ home setup and 
 
 _(For a full build guide, see [Kyek’s YouTube tutorial](https://www.youtube.com/watch?v=fBPu7AyDtkM&t=49s).)_
 
-![Final build of the Ferris Sweep Bling LP](/ferris_sweep_final.png)
+![Final build of the Ferris Sweep Bling LP](/ferris_sweep_final.jpeg)
 
 ## **One Year With the Ferris Sweep: Comfort, Customization, and Compromises**
 
