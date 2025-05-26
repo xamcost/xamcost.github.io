@@ -7,7 +7,7 @@ image:
   src: 'https://sedimark.eu/wp-content/resources/sedimark_logo.svg'
   alt: 'Sedimark logo'
 link: 'https://github.com/Sedimark'
-tags: ['Javascript', 'Next.js']
+tags: ['Kubernetes', 'Javascript', 'Next.js']
 ---
 
 Sedimark is a project funded by the European Commission under the Horizon Europe programme, which aims at creating an ecosystem whose participants can easily share datasets and services seamlessly and securely, while retaining sovereignty on their data. It stands for [SEcure Decentralized Intelligent data MARKetplace](https://sedimark.eu/). This ambitious project involves 12 partners from 8 different countries, and it is expected to run until October 2025.

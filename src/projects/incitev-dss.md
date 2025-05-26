@@ -7,7 +7,7 @@ image:
   src: 'https://www.incit-ev.eu/wp-content/uploads/2020/04/LOGO-INCIT-EV_trans-e1587995833448.png'
   alt: 'INCITEV logo'
 link: 'https://github.com/Atos-Research-and-Innovation/incitev-dss-frontend'
-tags: ['Javascript', 'Next.js']
+tags: ['Kubernetes', 'Javascript', 'Next.js']
 ---
 
 INCITEV DSS is a Decision Support System to evaluate the impact of an electric vehicle fleet on the power grid. It is part of the [INCIT-EV project](https://www.incit-ev.eu/), an ambitious project funded by the European Commission, gathering more than 40 partners all around Europe. It aims at fostering the adoption of electric vehicles across Europe by providing innovative user-centered solutions, both on the hardware side (fast chargers, wireless EV charging prototypes, ...) and software (EV charging app, mobility provider portal, ...). Extensive resources about the INCIT-EV project can be found [here in the Cordis portal of the European Commission](https://cordis.europa.eu/project/id/875683/results).
