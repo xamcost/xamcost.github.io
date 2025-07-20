@@ -11,9 +11,9 @@ publishedOn: '2025-05-25'
 
 ## Why I Built My Own Split Keyboard: A Journey to Comfort and Efficiency
 
-For years, I typed on Apple’s Magic Keyboard, assuming it was "good enough"—until the discomfort became impossible to ignore. After long coding or writing sessions, my shoulders ached from the unnatural, hunched posture forced by the keyboard’s narrow layout. My hands, cramped together, seemed to amplify tension rather than productivity. Worse, despite years of typing, I still found myself glancing down at the keys, struggling to build muscle memory. The excessive key travel and staggered rows meant my fingers had to wander too far, breaking my flow.
+For years, I typed on Apple’s Magic Keyboard, and never questioned using another type of keyboard, until I came across split keyboards, randomly through a friend. Before that, I never got convinced by the ergonomic keyboards I ran into: they would usually feature a slight curve in their key layout and some wrist pads. Yet seeing a keyboard truly split in two parts, along with column-staggered layout, I started digging into the world of ergonomics, a world much deeper than what I imagined. I began understanding the discomfort I've been maintaining so far. After long coding or writing sessions, my shoulders ached, hunched posture forced by the keyboard’s narrow layout. My hands, cramped together, seemed to amplify tension rather than productivity. Moreover, despite years of typing, I still found myself glancing down at the keys, struggling to build muscle memory. The excessive key travel and staggered rows meant my fingers had to wander too far, breaking my flow.
 
-I knew I needed a change. **Split keyboards** promised relief by letting my hands rest at a natural shoulder-width distance, but the pre-built options were either prohibitively expensive (like the $300+ Moonlander or Advantage360) or bulky (such as the Glove80, which seems fantastic but hardly portable). Frustrated, I stumbled upon the vibrant world of **DIY mechanical keyboards**—and it felt like a revelation.
+So it was time for a change. Split keyboards promised relief by letting my hands rest at a natural shoulder-width distance, but the pre-built options were either prohibitively expensive (like the $300+ Moonlander or Advantage360) or bulky (such as the Glove80, which seems fantastic but hardly portable). Frustrated, I stumbled upon the vibrant world of **DIY mechanical keyboards**, and it felt like a revelation.
 
 The community had already solved my problem. Dozens of **open-source keyboard designs** existed, with passionate builders sharing schematics, firmware, and modding tips. After weeks of research, I fell for the **Ferris Sweep**: a sleek, ultra-compact and minimalist 34 keys split keyboard with a column-staggered layout designed for ergonomic typing. It checked every box—portable, cheap to make, and painstakingly optimized for efficiency.
 
@@ -21,7 +21,7 @@ Building it myself wasn’t just a cost-saving hack; it was a deep dive into a h
 
 ## Why the Ferris Sweep Bling LP Won Me Over
 
-The [Ferris Sweep Bling LP](https://github.com/davidphilipbarr/Sweep), from David Barr based on the work from Pierre Chevalier, wasn’t just another keyboard—it was a deliberate answer to my ergonomic and practical needs. Here’s why it stood out:
+The [Ferris Sweep Bling LP](https://github.com/davidphilipbarr/Sweep), from David Barr based on the work from Pierre Chevalier, wasn’t just another keyboard, it was a deliberate answer to my ergonomic and practical needs. Here’s why it stood out:
 
 **1. Ergonomics, Optimized**  
 The **split design** freed my hands to rest at a natural shoulder-width distance, eliminating the shoulder strain I’d endured with traditional keyboards. Paired with an **ortholinear, column-staggered layout**, it minimized finger stretching by aligning keys to my fingertips’ natural movement.
@@ -45,16 +45,16 @@ Since ergonomics drove my search, I focused solely on **split keyboards**, but e
 
 - **Layout & Number of Keys**:
   - Prefer a familiar layout? Keyboards like the **ZSA Voyager**, **Lily58** or **Sofle** offer split designs with standard key counts.
-  - Want radical minimalism? My 34 key Ferris Sweep forced me to adopt optimized layers, but the tradeoff was portability and a steeper learning curve.
+  - Want radical minimalism? My 34 key Ferris Sweep forced me to think thorougly about my key mappings, and to embrace layers. It was a steeper learning curve, though it felt rewarding.
 - **Curved or Flat?**
-  - Keyboards like the **Glove80** or **Kinesis Advantage360** curve keys to further reduce finger motion. While tempting, their bulk clashed with my need for portability—though I’d love to try one someday for home use.
+  - Keyboards like the **Glove80** or **Kinesis Advantage360** curve keys to further reduce finger motion. While tempting, their bulk clashed with my need for portability, though I’d love to try one someday for home use.
 - **Tenting (Adjustable Inclination)**:
-  - Some keyboards like the **Moonlander** include built-in tenting. For DIY builds, if you have access to a 3D printer, you can find tenting accessories to print. I tried [this one] for the Ferris Sweep, but didn't stick to it (yet).
+  - Some keyboards like the **Moonlander** include built-in tenting. For DIY builds, if you have access to a 3D printer, you can find tenting accessories to print. I tried [this one] for the Ferris Sweep, but didn't stick to it (yet?).
 
 ### 2. Budget: DIY vs. Pre-Built
 
 - **DIY keyboards** are often far cheaper. My Ferris Sweep cost under **$100**, while pre-built ergonomic splits can exceed **$300**.
-- Some shops (e.g., **Boardsource**, **SplitKB**) sell pre-soldered DIY kits at a slight premium, saving time without breaking the bank.
+- Some shops (e.g., **Mechboard**, **SplitKB**) sell pre-soldered DIY kits at a slight premium, saving time without breaking the bank.
 - If budget isn’t a constraint, the **ZSA Voyager** or **Kinesis Advantage360** are solid options.
 
 ### 3. Switch Type: Feel and Flexibility
@@ -71,7 +71,7 @@ Since ergonomics drove my search, I focused solely on **split keyboards**, but e
 ### 5. Firmware & Programmability
 
 - **QMK/ZMK Compatibility** is non-negotiable for me. These open-source firmware systems let you create custom layers, macros, and even wireless support (via ZMK).
-- **Pre-Built Convenience**: If coding keymaps sounds daunting, pre-builts often include user-friendly configurators (e.g., ZSA’s Oryx).
+- **Pre-Built Convenience**: If coding keymaps sounds daunting, pre-builts often include user-friendly configurators (e.g., ZSA’s Oryx). Coding might be utterly unnecessary if you pick a keyboard with enough keys for your needs (Sofle, Lily58, Glove80, ...).
 
 ## **Bill of Materials & Cost**
 
@@ -106,11 +106,19 @@ I built **two versions** of the Ferris Sweep Bling LP: a _wired_ home setup and 
    - Use a **breadboard + tape** to align Mill-Max pins before soldering (see image below). A magnet helps collect stray pins!  
      ![Mill-Max socketing method using a breadboard and tape](/mill_max_socketing.jpeg)
 
-2. **Battery Safety**:
+2. **Battery**:
 
    - ⚠️ **Always tape one LiPo wire** while soldering to avoid shorts. Store spares in a **fireproof bag**.
+   - Trying to raise the distance between the controller and the keyboard is a good idea to fit thicker, and therefore higher capacity, batteries. That's another advantage of the Mill-Max sockets.
 
-3. **Cases Matter**:
+3. **Wired or wireless?**:
+
+   - I started with a **wired build**, then built another **wireless** one. The wired build is perfect for home use, while the wireless one is great for travel.
+   - One issue with many wired builds is that they use a **TRRS cable** to connect the two halves, which can unfortunately lead to a short if it is unplugged while the keyboard is powered on. That's pretty unforgiving, I learned it the hard way by frying a controller... Another good reason to socket the controllers!
+   - For wireless builds, consider using a **USB dongle**. It significantly improves battery life.
+
+4. **Cases Matter**:
+
    - A case protects the PCB and adds grip. I 3D-printed mine, but pre-made options exist.
 
 _(For a full build guide, see [Kyek’s YouTube tutorial](https://www.youtube.com/watch?v=fBPu7AyDtkM&t=49s).)_
@@ -141,7 +149,7 @@ Speed wasn’t the goal, **endurance** was. Mission accomplished:
 
 It’s not perfect, but the tradeoffs were worth it for me:
 
-- **Thumb Keys**: Two per side works, but a **third** (like on the Corne or Swoop keyboards) could be a nice addition for `Tab`/`Enter`.
+- **Thumb Keys**: Two per side works, but a **third** (like on the Corne or Swoop keyboards) could be a nice addition for `Tab`/`Enter` or `Shift`.
 - **Gaming**: Home row modifiers doesn't play nicely with gaming, and you may miss the top number rows. I still use my old Magic Keyboard for gaming, but it’s a minor inconvenience considering how rarely I game.
 - **French Accents**: My mapping ignores them (I write mostly in English), but adding a dedicated "accent layer" is doable, just not my priority.
 
