@@ -7,7 +7,7 @@ image:
   src: 'https://sedimark.eu/wp-content/resources/sedimark_logo.svg'
   alt: 'Sedimark logo'
 link: 'https://github.com/Sedimark'
-tags: ['Kubernetes', 'Javascript', 'Next.js']
+tags: ['Kubernetes', 'Javascript', 'Next.js', 'Rust']
 ---
 
 Sedimark is a project funded by the European Commission under the Horizon Europe programme, which aims at creating an ecosystem whose participants can easily share datasets and services seamlessly and securely, while retaining sovereignty on their data. It stands for [SEcure Decentralized Intelligent data MARKetplace](https://sedimark.eu/). This ambitious project involves 12 partners from 8 different countries, and it is expected to run until October 2025.
@@ -20,7 +20,7 @@ Sedimark participants can use its marketplace to either publish their datasets a
 
 ## My role
 
-As a research tech lead at [Eviden](https://eviden.com/about-us/), I lead a small team of two developers: we've been designing, implementing and deploying [the marketplace](https://github.com/Sedimark/marketplace-frontend), working closely with:
+As a research and development technical lead at [Eviden](https://eviden.com/about-us/), I lead a small team of two developers: we've been designing, implementing and deploying [the marketplace](https://github.com/Sedimark/marketplace-frontend), working closely with:
 
 - [the LINKS foundation](https://linksfoundation.com/en/), which provides [the toolbox to interact with the IOTA tangle](https://github.com/Sedimark/dlt-booth).
 - [the university of Cantabria](https://web.unican.es/en/Pages/default.aspx), implementing the data space components, including its connector.
@@ -34,7 +34,8 @@ My efforts in this project therefore focus on:
 - project management: leading the marketplace developers team, coordinating with other partners, and ensuring the project is delivered on time and within budget.
 - architecture design: coordinating with other partners to design the overall Sedimark architecture, ensuring it meets the project's requirements and the constraints of each partner.
 - frontend development contributor: to build a user-friendly interface for the marketplace, designed with [Figma](https://www.figma.com/), implemented with [Next.js](https://nextjs.org/).
+- backend development contributor: providing feedback to improve the backend components of the marketplace, and contribute to their implementation (mainly in **Rust** and **Python**).
 - devops:
   - hosting the marketplace and other fundamental Sedimark components in a Kubernetes cluster we managed in our own servers.
   - setting up a CI/CD pipelines to ensure the marketplace is always up-to-date and secure.
-  - but also as an administrator of the [Sedimark GitHub organization](https://github.com/Sedimark), providing runners and managing repositories.
+  - but also as an administrator of the [Sedimark GitHub organization](https://github.com/Sedimark), providing runners for CI/CD jobs and managing repositories.

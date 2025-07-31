@@ -42,7 +42,7 @@ You can also use the `-h` flag to see all available options.
 
 If you're on MacOS, the app will notify you when the work or break time is over, by triggering both a notification and playing a sound (using the `say` command).
 Don't be too surprised to hear a French accent!
-On any other OS, the app won't notify or play a sound. Maybe I'll add this in the future.
+On other OSs, the app will send a notification. Playing a sound is an ongoing work.
 
 ## Acknowledgements
 
