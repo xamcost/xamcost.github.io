@@ -106,6 +106,24 @@ for (const post of nonDraftPosts) {
     border-radius: 5px;
   }
 
+  @media (max-width: 768px) {
+    #post {
+      flex-direction: column !important;
+      align-items: center;
+      text-align: center;
+    }
+
+    #post img {
+      width: 100%;
+      max-width: 250px;
+      margin-bottom: 1em;
+    }
+
+    #post-content {
+      width: 100%;
+    }
+  }
+
   #post p {
     text-align: justify;
     color: #c0caf5;

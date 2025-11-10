@@ -82,8 +82,20 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
 
   div[id$='projects-list'] {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1em;
+  }
+
+  @media (min-width: 768px) {
+    div[id$='projects-list'] {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    div[id$='projects-list'] {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 
   #project {
