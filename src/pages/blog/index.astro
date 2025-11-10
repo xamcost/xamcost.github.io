@@ -93,7 +93,7 @@ for (const post of nonDraftPosts) {
     justify-content: space-between;
     font-style: italic;
     font-size: 0.9em;
-    gap: 1em;
+    gap: 2em;
   }
 
   #post h2 {
@@ -107,9 +107,13 @@ for (const post of nonDraftPosts) {
     border-radius: 5px;
   }
 
+  #post-abstract {
+    text-align: justify;
+  }
+
   @media (max-width: 768px) {
     #post {
-      flex-direction: column !important;  // Override both image-right and image-left
+      flex-direction: column !important; /* Override both image-right and image-left */
       align-items: center;
       text-align: center;
     }
@@ -126,7 +130,6 @@ for (const post of nonDraftPosts) {
   }
 
   #post p {
-    text-align: justify;
     color: #c0caf5;
   }
 </style>
