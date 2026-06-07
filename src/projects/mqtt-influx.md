@@ -2,7 +2,7 @@
 isDraft: false
 title: 'MQTT to InfluxDB'
 description: 'A simple tool to store data collected from MQTT topics into InfluxDB'
-status: 'done'
+status: 'no-show'
 image:
   src: '/mqtt_influx.png'
   alt: 'MQTT to InfluxDB logo'

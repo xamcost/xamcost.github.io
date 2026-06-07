@@ -2,7 +2,7 @@
 isDraft: false
 title: 'Sedimark'
 description: 'A marketplace to share datasets, with transactions logged in a digital ledger'
-status: 'ongoing'
+status: 'done'
 image:
   src: 'https://sedimark.eu/wp-content/resources/sedimark_logo.svg'
   alt: 'Sedimark logo'
