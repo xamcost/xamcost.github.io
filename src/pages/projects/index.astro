@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import contributions from '../../data/contributions.json';
 
 const projects = await getCollection('projects');
 const ongoingProjects = projects.filter(project => project.data.status === 'ongoing');
@@ -23,7 +24,7 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
             <h2>{project.data.title}</h2>
             <img src={`${project.data.image.src}`} alt={project.data.image.alt} />
             <p>{project.data.description}</p>
-            <div id="project-tags">
+            <div class="project-tags">
               {project.data.tags && project.data.tags.map(tag => (
                 <p>{tag}</p>
               ))}
@@ -45,13 +46,39 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
             <h2>{project.data.title}</h2>
             <img src={`${project.data.image.src}`} alt={project.data.image.alt} />
             <p>{project.data.description}</p>
-            <div id="project-tags">
+            <div class="project-tags">
               {project.data.tags && project.data.tags.map(tag => (
                 <p>{tag}</p>
               ))}
             </div>
           </a>}
         </>
+      ))}
+    </div>
+  </div>
+  <h1 id="past-header">
+    Contributions
+  </h1>
+  <hr />
+  <div id="contrib-container">
+    <div id="contrib-list">
+      {contributions.map(contrib => (
+        <a class="contrib-card" href={contrib.link}>
+          <div class="contrib-title">
+            <h2>{contrib.title}</h2>
+            <div class="contrib-tags">
+              {contrib.tags.map(tag => (
+                <p>{tag}</p>
+              ))}
+            </div>
+          </div>
+          <p>{contrib.summary}</p>
+          <ul>
+            {contrib.contributions.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </a>
       ))}
     </div>
   </div>
@@ -66,6 +93,10 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
   #ongoing-header, #past-header {
     color: #7aa2f7;
     margin-bottom: 0em;
+  }
+
+  h1 {
+    margin-top: 1em;
   }
 
   hr {
@@ -115,7 +146,7 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
     background-color: #394b70;
   }
 
-  #project h2 {
+  h2 {
     color: #bb9af7;
   }
 
@@ -127,12 +158,15 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
     margin-top: -1em;
   }
 
-  #project p {
-    text-align: center;
+  p {
     color: #c0caf5;
   }
 
-  #project-tags {
+  #project p {
+    text-align: center;
+  }
+
+  .project-tags, .contrib-tags {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -141,12 +175,51 @@ const pastProjects = projects.filter(project => project.data.status === 'done');
     margin-top: -1em;
   }
 
-  #project-tags p {
+  .project-tags p, .contrib-tags p {
     color: #292e42;
     background-color: #7dcfff;
     padding: 5px;
     border-radius: 20px;
     font-size: 0.8em;
     font-weight: bold;
+  }
+
+  .contrib-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .contrib-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-decoration: none;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+  }
+
+  .contrib-title h2 {
+    margin-top: 0em;
+    margin-bottom: 0.2em;
+  }
+
+  .contrib-card p {
+    margin-top: 0.2em;
+  }
+
+  .contrib-card:hover {
+    background-color: #394b70;
+  }
+
+  .contrib-card ul {
+    color: #c0caf5;
+    list-style-type: disc;
+    padding-left: 1.5em;
+    margin: 0.1em 0;
+    align-self: flex-start;
+    list-style-position: inside;
   }
 </style>

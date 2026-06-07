@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Atlas.nvim",
+    "link": "https://github.com/emrearmagan/atlas.nvim",
+    "summary": "A Neovim plugin to manage issues and pull requests across GitHub, Gitlab and Atlassian.",
+    "contributions": [
+      "Added support for Jira Server API"
+    ],
+    "tags": [
+      "Neovim",
+      "Lua"
+    ]
+  },
+  {
+    "title": "Opencode.nvim",
+    "link": "https://github.com/nickjvandyke/opencode.nvim",
+    "summary": "A Neovim plugin to work with Opencode directly from your editor.",
+    "contributions": [
+      "Added support for tmux as a provider"
+    ],
+    "tags": [
+      "Neovim",
+      "Lua"
+    ]
+  }
+]
